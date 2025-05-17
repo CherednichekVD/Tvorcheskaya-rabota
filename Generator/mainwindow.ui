@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>360</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Умная теплица</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <item>
+     <widget class="QScrollArea" name="scrollArea">
+      <widget class="QWidget" name="scrollContent">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>221</width>
+         <height>453</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="contentLayout">
+        <item>
+         <widget class="QGroupBox" name="sensorsGroup">
+          <property name="title">
+           <string>Данные датчиков</string>
+          </property>
+          <layout class="QGridLayout" name="sensorsGrid">
+           <item row="0" column="0">
+            <widget class="QLabel" name="labelSoil">
+             <property name="text">
+              <string>Влажность почвы:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="soilMoistureLabel"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="labelLight">
+             <property name="text">
+              <string>Освещенность:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLabel" name="lightValueLabel"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="labelTemp">
+             <property name="text">
+              <string>Температура:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLabel" name="temperatureLabel"/>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="labelHumidity">
+             <property name="text">
+              <string>Влажность воздуха:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLabel" name="humidityLabel"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="settingsGroup">
+          <property name="title">
+           <string>Настройки</string>
+          </property>
+          <layout class="QGridLayout" name="settingsGrid">
+           <item row="0" column="0">
+            <widget class="QLabel" name="labelMoistureThreshold">
+             <property name="text">
+              <string>Порог полива (%):</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="soilMoistureSpin">
+             <property name="maximum">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="labelLightThreshold">
+             <property name="text">
+              <string>Порог света (lux):</string>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QSpinBox" name="lightThresholdSpin">
+             <property name="maximum">
+              <number>1000</number>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="labelTempThreshold">
+             <property name="text">
+              <string>Макс. темп. (°C):</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QSpinBox" name="temperatureSpin">
+             <property name="minimum">
+              <number>-50</number>
+             </property>
+             <property name="maximum">
+              <number>50</number>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="labelHumidityThreshold">
+             <property name="text">
+              <string>Мин. влаж. (%):</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QSpinBox" name="humiditySpin">
+             <property name="maximum">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="labelLightTime">
+             <property name="text">
+              <string>Световой день (ч):</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QSpinBox" name="lightTimeSpin">
+             <property name="maximum">
+              <number>24</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="statusGroup">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="title">
+           <string>Состояние</string>
+          </property>
+          <layout class="QGridLayout" name="statusGrid">
+           <item row="0" column="0">
+            <widget class="QLabel" name="pumpStatus"/>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="lampStatus"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="humidifierStatus"/>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLabel" name="lightRemainingLabel"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="testButton">
+          <property name="text">
+           <string>Тест датчиков</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
